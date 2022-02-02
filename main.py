@@ -5,12 +5,12 @@ import telnetlib
 import os
 
 def run(tn, command):
-	try:
-		cmd_s = command + "\n"
-		tn.write(cmd_s.encode('utf-8'))
-	except:
-		print("Telnet failed to run a command!")
-		pass
+    try:
+        cmd_s = command + "\n"
+        tn.write(cmd_s.encode('utf-8'))
+    except:
+        print("Telnet failed to run a command!")
+        pass
 
 @dataclass
 class Coords:
