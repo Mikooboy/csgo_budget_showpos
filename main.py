@@ -46,7 +46,7 @@ class budget_showpos():
         while True:
             if self.active:
                 run(self.tn, "getpos")
-            sleep(0.05)
+            sleep(0.01)
 
     def showpos_loop(self):
         while True:
