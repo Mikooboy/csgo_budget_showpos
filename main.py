@@ -69,11 +69,11 @@ class budget_showpos():
 
                     coords = setpos.replace("setpos ", "")
                     coords = coords.split()
-                    self.coords = Coords(float(coords[0]), float(coords[1]), float(coords[2]))
+                    self.coords = Coords(round(float(coords[0]), 2), round(float(coords[1]), 2), round(float(coords[2]), 2))
 
                     angle = setang.replace("setang ", "")
                     angle = angle.split()
-                    self.angle = Angle(float(angle[0]), float(angle[1]), float(angle[2]))
+                    self.angle = Angle(round(float(angle[0]), 2), round(float(angle[1]), 2), round(float(angle[2]), 2))
 
                     run(self.tn, f"clear;" +
                         f"echo \"‎pos: {self.coords.x:0.2f} {self.coords.y:0.2f} {self.coords.z:0.2f}\"" +
