@@ -2,10 +2,7 @@ from threading import Thread
 from time import sleep
 from dataclasses import dataclass
 import telnetlib
-from tkinter.ttk import Style
-import colorama
 import os
-from colorama import Fore, Back, Style
 
 def run(tn, command):
 	try:
@@ -61,9 +58,9 @@ class budget_showpos():
                 if ("!showpos" in line):
                     self.active = not self.active
                     if self.active:
-                        print(f"{Fore.GREEN}showpos turned on!{Fore.RESET}")
+                        print(f"showpos turned on!")
                     else:
-                        print(f"{Fore.RED}showpos turned off!{Fore.RESET}")
+                        print(f"showpos turned off!")
 
                 if ("setpos" in line):
                     splitted = line.split(";")
@@ -87,9 +84,8 @@ class budget_showpos():
 
 def main():
     os.system('cls')
-    colorama.init()
-    print(f"Make sure to add {Fore.CYAN}-netconport 2121{Fore.RESET} to your launch options!\n")
-    print(f"Connecting to: {Fore.RED}127.0.0.1:2121{Fore.RESET}")
+    print(f"Make sure to add -netconport 2121 to your launch options!\n")
+    print(f"Connecting to: 127.0.0.1:2121")
     while True:
         try:
             tn = telnetlib.Telnet("127.0.0.1", "2121")
@@ -97,7 +93,7 @@ def main():
         except ConnectionRefusedError:
             sleep(3)
             pass
-    print(f"{Fore.GREEN}Successfully Connected!{Fore.RESET}")
+    print(f"Successfully Connected!")
     budget_showpos(tn)
 
 main()
