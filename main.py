@@ -68,6 +68,7 @@ class budget_showpos():
                         print(f"showpos turned on!")
                     else:
                         print(f"showpos turned off!")
+			run(self.tn, "clear")
 
                 if (re.match(r"^(-?[0-9]{1,10}\.[0-9]{1}[ ]?){5}$", line) and self.active):
                     posAndAngle = line.split()
