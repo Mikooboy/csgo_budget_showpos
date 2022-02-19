@@ -65,10 +65,14 @@ class budget_showpos():
                     self.active = not self.active
                     if self.active:
                         self.print_setup()
-                        print(f"showpos turned on!")
+                        os.system('cls')
+                        print('\033[?25l', end="") # Disable curson in cmd
+                        print("\n")  
                     else:
+                        os.system('cls')
+                        print('\033[?25h', end="") # Enable curson in cmd
                         print(f"showpos turned off!")
-			run(self.tn, "clear")
+                        run(self.tn, "clear")
 
                 if (re.match(r"^(-?[0-9]{1,10}\.[0-9]{1}[ ]?){5}$", line) and self.active):
                     posAndAngle = line.split()
@@ -79,9 +83,12 @@ class budget_showpos():
                     self.angle.pitch = float(posAndAngle[3])
                     self.angle.yaw = float(posAndAngle[4])
 
-                    run(self.tn, f"clear;" +
-                        f"echo \"‎pos: {self.coords.x:0.1f} {self.coords.y:0.1f} {self.coords.z:0.1f}\"" +
-                        f"\"‎ang: {self.angle.pitch:0.1f} {self.angle.yaw:0.1f}\"")
+                    UP = "\x1B[2A"
+                    CLR = "\x1B[0K"
+
+                    print(f"{UP}pos: {self.coords.x:0.1f} {self.coords.y:0.1f} {self.coords.z:0.1f}{CLR}\nang: {self.angle.pitch:0.1f} {self.angle.yaw:0.1f}{CLR}")
+
+                    run(self.tn, f"clear")
             except Exception as e:
                 sleep(0.1)
                 pass
@@ -98,7 +105,7 @@ def main():
             sleep(3)
             pass
     print(f"Successfully Connected!")
-    print(f"type !showpos in console to toggle the showpos")
+    print(f"\nType !showpos in console to toggle the showpos")
     budget_showpos(tn)
 
 main()
