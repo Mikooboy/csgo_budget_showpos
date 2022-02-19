@@ -4,13 +4,15 @@
 
 As a response to the CS:GO Update on 1.2.2022, which makes `cl_showpos` a cheat-protected command, I have made a simple tool to display your position and angle in game.
 
-UPDATE 17.2.2022: `getpos` and `getpos_exact` are now cheat protected. Tool now uses `spec_pos` which still works but the values are rounded to a single decimal.
-
-UPDATE 19.2.2022: Valve disabled `developer 1` on their servers so we can no longer print the info at the top left of the game. Printing is now done to the cmd.
-
 ![image](https://user-images.githubusercontent.com/73204452/152147297-bdb71c05-1f41-400f-a34d-ad803734550e.png)
 
 * **This will not get you VAC banned 100% as it does not hook into the game in any sort of way.**
+
+* **Update** 17.2.2022: Valve has now cheat-protected `getpos` and `getpos_exact`. Tool now uses `spec_pos` which still works but the values are rounded to a single decimal.
+
+* **Update** 19.2.2022: Valve disabled `developer 1` on their servers so we can no longer print the info at the top left of the game. Printing is now done to the terminal.
+
+    ![image](https://user-images.githubusercontent.com/73204452/154813868-a2465cce-d3e0-4af9-b9ad-544e7f444009.png)
 
 ## ⌨ Controls
 
