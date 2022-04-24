@@ -1,5 +1,9 @@
 ![image](https://user-images.githubusercontent.com/73204452/152161829-49ef2de1-d8fd-4f66-9769-8f2b9ab1cc66.png)
 
+**!!! This tool no longer works !!!**
+
+**If you find a way to get the position in the console somehow please let me know!**
+
 ## 🛠 Tool to display your current position and angle above your radar.
 
 As a response to the CS:GO Update on 1.2.2022, which makes `cl_showpos` a cheat-protected command, I have made a simple tool to display your position and angle in game.
